@@ -81,4 +81,11 @@ Rails.application.configure do
   config.hosts << pf_host
 
   config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
+
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'https://didactic-dollop-94v5xp7ppxvfxvvq-3000.app.github.dev' # ここをコピペすると失敗します。自分の環境に合わせてください。
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 end

@@ -18,5 +18,6 @@ module SampleApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Rails.application.routes.default_url_options[:host] = 'https://didactic-dollop-94v5xp7ppxvfxvvq-3000.app.github.dev'
   end
 end
