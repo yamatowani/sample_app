@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get    "/login",   to: "sessions#new"
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
+  # resourcesメソッドはindex~destroyまでの7つのアクションのルーティングを自動で作成する onlyオプションで制限もできる
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
