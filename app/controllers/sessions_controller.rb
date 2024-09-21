@@ -1,13 +1,13 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-  end
+class SessionsController < ApplicationController
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       forwarding_url = session[:forwarding_url]
-      reset_session      # ログインの直前に必ずこれを書くこと
+      reset_session # ログインの直前に必ずこれを書くこと
       if params[:session][:remember_me] == '1'
         remember(user)
       else
